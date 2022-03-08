@@ -19,3 +19,9 @@ export function saveTasks(newTasksArray) {
     localStorage.setItem(tasksStorageKey, stringData);
     updateTasksHTML(taskListHTMLSelector, newTasksArray)
 }
+
+export function deleteTasks(newTasksArray) {
+    const stringData = JSON.stringify(newTasksArray)
+    localStorage.removeItem(tasksStorageKey, stringData);
+    updateTasksHTML(taskListHTMLSelector, newTasksArray)
+}
