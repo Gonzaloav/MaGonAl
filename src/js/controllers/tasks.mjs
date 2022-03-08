@@ -1,4 +1,4 @@
-import { addTask, saveTasks, getTasks, deleteTasks } from "../models/domainObjects.mjs";
+import { addTask, saveTasks, getTasks, deleteTasks,deleteIndividualTask } from "../models/domainObjects.mjs";
 import { taskListHTMLSelector, addTaskInputSelector, completedCSSClass } from "../models/defines.mjs"
 
 export function task2HTMLElement (taskIndex, taskObject) {
@@ -37,6 +37,13 @@ export function task2HTMLElement (taskIndex, taskObject) {
         (event) => {
             const tasks = getTasks();
             deleteTasks(tasks);
+        }
+    );
+     // Manejador de eventos de borrado individual
+     inputDeleteHTMLItem.addEventListener(
+        "click",
+        (event) => {
+            deleteIndividualTask(taskIndex);
         }
     );
     return listHTMLItem

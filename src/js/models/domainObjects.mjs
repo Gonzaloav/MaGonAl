@@ -14,12 +14,26 @@ export function addTask(taskObject) {
     saveTasks(tasks);
 }
 
+/**
+ * Función para borrar elementos individuales del array
+ * @param {} index 
+ */
+export function deleteIndividualTask(index) {
+    const tasks = getTasks();
+    tasks.splice(index,1);
+    saveTasks(tasks);
+}
+
 export function saveTasks(newTasksArray) {
     const stringData = JSON.stringify(newTasksArray)
     localStorage.setItem(tasksStorageKey, stringData);
     updateTasksHTML(taskListHTMLSelector, newTasksArray)
 }
 
+/**
+ * Función para borrar todo el array
+ * @param {*} newTasksArray 
+ */
 export function deleteTasks(newTasksArray) {
     const stringData = JSON.stringify(newTasksArray)
     localStorage.removeItem(tasksStorageKey, stringData);
