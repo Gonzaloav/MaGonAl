@@ -3,6 +3,7 @@
 ## TODO
 * Borrar una tarea. Alfonso 
 * Borrar todas las tareas completadas. Alfonso
+* Mejorar visualmente botón de borrado. Alfonso
 * Mantener las tareas completadas al final (ordenar automáticamente).
 * Mostrar/ocultar tareas completadas.
 * Editar tareas no completadas.
