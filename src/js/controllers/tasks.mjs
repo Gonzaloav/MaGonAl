@@ -82,5 +82,9 @@ export function taskAddButtonClickHandler (event) {
         };
         addTask(newTask);
         updateTasksHTML(taskListHTMLSelector,getTasks());
+        /** Limpiar input tras añadir tarea. 
+         * document.getElementById("taskInput").value= "";
+         */
+        document.getElementById("taskInput").value= "";
     }
 }
