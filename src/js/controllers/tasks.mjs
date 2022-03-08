@@ -7,6 +7,7 @@ export function task2HTMLElement (taskIndex, taskObject) {
     const pHTMLItem = document.createElement("p");
     const inputCheckboxHTMLItem = document.createElement("input");
     const inputDeleteHTMLItem = document.createElement("input");
+    const textoEliminar=document.createElement("span");
     //Seleccionar boton borrar
     const botonBorrar=document.querySelector("#botonBorrar");
     //Les proporciono valores 
@@ -14,8 +15,9 @@ export function task2HTMLElement (taskIndex, taskObject) {
     inputDeleteHTMLItem.type = "checkbox";
     inputCheckboxHTMLItem.checked = taskObject.completed;
     pHTMLItem.innerHTML = taskObject.taskName
+    textoEliminar.innerHTML="Eliminar";
     // Los anido
-    listHTMLItem.append(pHTMLItem, inputCheckboxHTMLItem,inputDeleteHTMLItem);
+    listHTMLItem.append(pHTMLItem, inputCheckboxHTMLItem,inputDeleteHTMLItem, textoEliminar);
     // Aplico estilos si está completada
     if (taskObject.completed) {
         listHTMLItem.classList.add(completedCSSClass);
@@ -82,5 +84,9 @@ export function taskAddButtonClickHandler (event) {
         };
         addTask(newTask);
         updateTasksHTML(taskListHTMLSelector,getTasks());
+        /** Limpiar input tras añadir tarea. 
+         * document.getElementById("taskInput").value= "";
+         */
+        document.getElementById("taskInput").value= "";
     }
 }
