@@ -46,11 +46,22 @@ export function updateTasksHTML (CSSselector, tasksArray) {
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
-    event.preventDefault()
-    const newTask = {
-        taskName: input.value,
-        completed: false,
-    };
-    addTask(newTask);
-    updateTasksHTML(taskListHTMLSelector,getTasks());
+    /** No permitir añadir tareas vacías. Manuel
+    if (input.value===""){
+        alert("No se puede dejar el campo de tareas vacío");
+    }
+    else{}
+    */
+    if (input.value===""){
+        alert("No se puede dejar el campo de tareas vacío");
+    }
+    else{
+        event.preventDefault()
+        const newTask = {
+            taskName: input.value,
+            completed: false,
+        };
+        addTask(newTask);
+        updateTasksHTML(taskListHTMLSelector,getTasks());
+    }
 }
