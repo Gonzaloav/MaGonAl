@@ -1,4 +1,4 @@
-import { addTask, saveTasks, getTasks } from "../models/domainObjects.mjs";
+import { addTask, saveTasks, getTasks, deleteTasks } from "../models/domainObjects.mjs";
 import { taskListHTMLSelector, addTaskInputSelector, completedCSSClass } from "../models/defines.mjs"
 
 export function task2HTMLElement (taskIndex, taskObject) {
@@ -6,12 +6,16 @@ export function task2HTMLElement (taskIndex, taskObject) {
     const listHTMLItem = document.createElement("li");
     const pHTMLItem = document.createElement("p");
     const inputCheckboxHTMLItem = document.createElement("input");
-    // Les proporciono valores 
+    const inputDeleteHTMLItem = document.createElement("input");
+    //Seleccionar boton borrar
+    const botonBorrar=document.querySelector("#botonBorrar");
+    //Les proporciono valores 
     inputCheckboxHTMLItem.type = "checkbox";
+    inputDeleteHTMLItem.type = "checkbox";
     inputCheckboxHTMLItem.checked = taskObject.completed;
     pHTMLItem.innerHTML = taskObject.taskName
     // Los anido
-    listHTMLItem.append(pHTMLItem, inputCheckboxHTMLItem);
+    listHTMLItem.append(pHTMLItem, inputCheckboxHTMLItem,inputDeleteHTMLItem);
     // Aplico estilos si está completada
     if (taskObject.completed) {
         listHTMLItem.classList.add(completedCSSClass);
@@ -25,6 +29,14 @@ export function task2HTMLElement (taskIndex, taskObject) {
             const tasks = getTasks();
             tasks[taskIndex].completed = event.target.checked;
             saveTasks(tasks);
+        }
+    );
+    // Manejador de eventos de borrado total
+    botonBorrar.addEventListener(
+        "click",
+        (event) => {
+            const tasks = getTasks();
+            deleteTasks(tasks);
         }
     );
     return listHTMLItem
