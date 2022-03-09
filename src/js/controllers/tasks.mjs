@@ -90,12 +90,12 @@ export function taskAddButtonClickHandler(event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
     /** No permitir añadir tareas vacías. Manuel
-    if (input.value===""){
+    *   if (document.getElementById("taskInput").value===""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else{}
     */
-    if (input.value === "") {
+    if (document.getElementById("taskInput").value===""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else {
@@ -105,6 +105,10 @@ export function taskAddButtonClickHandler(event) {
             completed: false,
         };
         addTask(newTask);
-        updateTasksHTML(taskListHTMLSelector, getTasks());
+        updateTasksHTML(taskListHTMLSelector,getTasks());
+        /** Limpiar input tras añadir tarea. 
+         * document.getElementById("taskInput").value= "";
+         */
+        document.getElementById("taskInput").value= "";
     }
 }
