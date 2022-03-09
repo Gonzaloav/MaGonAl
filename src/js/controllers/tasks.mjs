@@ -50,7 +50,11 @@ export function task2HTMLElement (taskIndex, taskObject) {
     );
     return listHTMLItem
 }
-
+/**
+ * Mantener las tareas completadas al final (ordenar automaticamente)
+ * @param {*} CSSselector 
+ * @param {*} tasksArray 
+ */
 export function updateTasksHTML (CSSselector, tasksArray) {
     const listHTMLElement = document.querySelector(CSSselector);
     listHTMLElement.innerText = ""
@@ -60,9 +64,28 @@ export function updateTasksHTML (CSSselector, tasksArray) {
         }
     } else {
         listHTMLElement.innerText = "Add your first task..."
-    }
-
+    } 
 }
+
+/**
+ * 7. Mantener las tareas completadas al final (ordenar automaticamente) Gonzalo
+ */
+function updateTasksHTML (CSSselector, tasksArray) {
+const elementos = document.querySelector (".completed");
+const padre = document.querySelector ("ul");
+   /**  if (padre)
+function swap (elementos, padre){
+let cambio = padre;
+cambio = [padre];
+[padre] = [elementos];
+[padre] = cambio;
+*/
+console.log (elementos,padre)
+}
+    
+
+
+
 
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
@@ -84,7 +107,7 @@ export function taskAddButtonClickHandler (event) {
         };
         addTask(newTask);
         updateTasksHTML(taskListHTMLSelector,getTasks());
-        /** Limpiar input tras añadir tarea. 
+        /** Limpiar input tras añadir tarea. Gonzalo
          * document.getElementById("taskInput").value= "";
          */
         document.getElementById("taskInput").value= "";
