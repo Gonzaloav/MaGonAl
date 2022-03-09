@@ -5,7 +5,7 @@
 * Borrar todas las tareas completadas. Alfonso
 * Mejorar visualmente botón de borrado. Alfonso
 * Mantener las tareas completadas al final (ordenar automáticamente).
-* Mostrar/ocultar tareas completadas.
+* Mostrar/ocultar tareas completadas. Manuel
 * Editar tareas no completadas.
 * No añadir tareas vacías. Manuel
 * Limpiar input tras añadir tarea. Gonzalo
