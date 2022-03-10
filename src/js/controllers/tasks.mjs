@@ -73,20 +73,18 @@ export function updateTasksHTML (CSSselector, tasksArray) {
 function updateTasksHTML (CSSselector, tasksArray) {
 const elementos = document.querySelector (".completed");
 const padre = document.querySelector ("ul");
-   /**  if (padre)
-function swap (elementos, padre){
-let cambio = padre;
-cambio = [padre];
-[padre] = [elementos];
-[padre] = cambio;
-*/
-console.log (elementos,padre)
+ function ordenarCompletedTasts (list){
+     const ul = document.querySelector("ul");
+     const li = document.querySelectorAll(".compled");
+     console.log (ul,li);
+        for (let dix=0; dix<li.length; dix++){
+            const checkbox = li[idx];
+            console.log(checkbox); 
+            ul.appendChild(checkbox);
+        }
+     }
 }
     
-
-
-
-
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
