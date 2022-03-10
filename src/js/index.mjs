@@ -18,6 +18,19 @@ document.querySelector(
     taskAddButtonClickHandler
 );
 
+// Prueba de boton ocultar. REVISAR. no funciona.
+botonOcultar.addEventListener("click",
+    (event) => {
+        let hideTasksCompleted = document.querySelector("li.completed");
+        console.log(hideTasksCompleted);
+        document.querySelector("li.completed").style.display = "none";
+        
+        
+                        
+    }
+)
+
+
 
 
 
