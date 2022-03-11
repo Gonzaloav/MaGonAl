@@ -18,7 +18,7 @@ document.querySelector(
     taskAddButtonClickHandler
 );
 
-// Prueba de boton Mostrar/Ocultar. REVISAR. no funciona.
+// Función para boton Mostrar/Ocultar. Muestra/Oculta las ya realizadas. Funciona. Manuel
 
 function toggleShowCompletedHandler (event) {
     const completedElements = document.querySelectorAll(".completed");
