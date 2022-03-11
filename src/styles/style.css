@@ -2,6 +2,10 @@
     text-decoration:line-through;
 }
 
+.hidden {
+    display: none;
+}
+
 li {
     display: flex;
     align-items: center;
