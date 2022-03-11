@@ -89,12 +89,12 @@ export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
     /** No permitir añadir tareas vacías. Manuel
-    if (document.getElementById("taskInput").value= ""){
+        if (document.getElementById("taskInput").value===""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else{}
     */
-    if (document.getElementById("taskInput").value= ""){
+    if (document.getElementById("taskInput").value===""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else{
