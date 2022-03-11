@@ -70,6 +70,7 @@ export function updateTasksHTML (CSSselector, tasksArray) {
 /**
  * 7. Mantener las tareas completadas al final (ordenar automaticamente) Gonzalo
  */
+/*
 function updateTasksHTML (CSSselector, tasksArray) {
 const elementos = document.querySelector (".completed");
 const padre = document.querySelector ("ul");
@@ -83,8 +84,7 @@ const padre = document.querySelector ("ul");
             ul.appendChild(checkbox);
         }
      }
-}
-    
+}*/
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
