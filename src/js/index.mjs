@@ -19,16 +19,19 @@ document.querySelector(
 );
 
 // Prueba de boton ocultar. REVISAR. no funciona.
-botonOcultar.addEventListener("click",
-    (event) => {
-        let hideTasksCompleted = document.querySelector("li.completed");
-        console.log(hideTasksCompleted);
-        document.querySelector("li.completed").style.display = "none";
-        
-        
-                        
+
+function toggleShowCompletedHandler (event) {
+    const completedElements = document.querySelectorAll(".completed");
+    for ( let item of completedElements ) {
+        item.classList.toggle("hidden");
     }
-)
+}
+
+const botonMostrarOcultar = document.querySelector("#botonMostrarOcultar");
+
+botonMostrarOcultar.addEventListener("click", toggleShowCompletedHandler);
+
+
 
 
 
