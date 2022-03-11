@@ -18,7 +18,7 @@ document.querySelector(
     taskAddButtonClickHandler
 );
 
-// Prueba de boton ocultar. REVISAR. no funciona.
+// Prueba de boton Mostrar/Ocultar. REVISAR. no funciona.
 
 function toggleShowCompletedHandler (event) {
     const completedElements = document.querySelectorAll(".completed");
@@ -27,7 +27,7 @@ function toggleShowCompletedHandler (event) {
     }
 }
 
-const botonMostrarOcultar = document.querySelector("#botonMostrarOcultar");
+const botonMostrarOcultar = document.querySelector("#triggerButton");
 
 botonMostrarOcultar.addEventListener("click", toggleShowCompletedHandler);
 
