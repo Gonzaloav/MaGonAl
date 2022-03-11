@@ -70,13 +70,13 @@ export function updateTasksHTML (CSSselector, tasksArray) {
 /**
  * 7. Mantener las tareas completadas al final (ordenar automaticamente) Gonzalo
  */
-
-/*function updateTasksHTML (CSSselector, tasksArray) {
+/*
+function updateTasksHTML (CSSselector, tasksArray) {
 const elementos = document.querySelector (".completed");
 const padre = document.querySelector ("ul");
  function ordenarCompletedTasts (list){
      const ul = document.querySelector("ul");
-     const li = document.querySelectorAll(".completed");
+     const li = document.querySelectorAll(".compled");
      console.log (ul,li);
         for (let dix=0; dix<li.length; dix++){
             const checkbox = li[idx];
@@ -84,18 +84,17 @@ const padre = document.querySelector ("ul");
             ul.appendChild(checkbox);
         }
      }
-}
-*/
+}*/
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
     /** No permitir añadir tareas vacías. Manuel
-        if (document.getElementById("taskInput").value===""){
+    if (document.getElementById("taskInput").value= ""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else{}
     */
-    if (document.getElementById("taskInput").value===""){
+    if (document.getElementById("taskInput").value= ""){
         alert("No se puede dejar el campo de tareas vacío");
     }
     else{
