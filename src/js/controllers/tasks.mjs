@@ -50,11 +50,22 @@ export function task2HTMLElement (taskIndex, taskObject) {
     );
     return listHTMLItem
 }
+
 /**
- * Mantener las tareas completadas al final (ordenar automaticamente)
- * @param {*} CSSselector 
- * @param {*} tasksArray 
+ * 7. Mantener las tareas completadas al final (ordenar automaticamente) Gonzalo
  */
+ function sortTasksHTML () {
+    const ul = document.querySelector("ul");
+    const li = document.querySelectorAll(".completed");
+    console.log (ul,li);
+    for (let idx=0; idx<li.length; idx++){
+        const checkbox = li[idx];
+        console.log(checkbox); 
+        ul.appendChild(checkbox);
+    }
+}
+
+
 export function updateTasksHTML (CSSselector, tasksArray) {
     const listHTMLElement = document.querySelector(CSSselector);
     listHTMLElement.innerText = ""
@@ -65,27 +76,9 @@ export function updateTasksHTML (CSSselector, tasksArray) {
     } else {
         listHTMLElement.innerText = "Add your first task..."
     } 
+    sortTasksHTML() // 7. Mantener las tareas completadas al final
 }
 
-/**
- * 7. Mantener las tareas completadas al final (ordenar automaticamente) Gonzalo
- */
-
-/*function updateTasksHTML (CSSselector, tasksArray) {
-const elementos = document.querySelector (".completed");
-const padre = document.querySelector ("ul");
- function ordenarCompletedTasts (list){
-     const ul = document.querySelector("ul");
-     const li = document.querySelectorAll(".completed");
-     console.log (ul,li);
-        for (let dix=0; dix<li.length; dix++){
-            const checkbox = li[idx];
-            console.log(checkbox); 
-            ul.appendChild(checkbox);
-        }
-     }
-}
-*/
 export function taskAddButtonClickHandler (event) {
     //console.log(event)
     const input = document.querySelector(addTaskInputSelector);
